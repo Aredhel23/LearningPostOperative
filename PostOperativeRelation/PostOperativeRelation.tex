@@ -59,7 +59,7 @@
 	{\large Federica Amato} \\[0.2 cm]
 	\url{federica.amato02@universitadipavia.it}
 	 \\[0.2 cm]
-	{Settembre 2017}
+	{Luglio 2018}
 \end{titlepage}
 
 \tableofcontents
@@ -124,4 +124,24 @@ Program LERS LB $2.5$ as a tool for knowledge acquisition in nursing, Proceeding
 
 The use of machine learning program LERS LB 2.5 in knowledge acquisition for expert system development in nursing. Computers in Nursing 9, pp. 227-234.			
 \end{itemize}
+\chapter{Preparazione e Studio dei dati}
+Per analizzare i dati e quindi costruire un buon modello predittivo ho utilizzato il software Orange Canvas (Orange). 
+Orange attraverso l'uso di diverse widget mi permette di analizzare e classificare le istanze del database in modo semplice ed automatico, senza l'utilizzo esplicito di codice. 
+
+\section{Conversione database}
+\noindent Per prima cosa ho dovuto adattare il formato dei dati in modo che Orange potesse leggerli. 
+
+\noindent Il software accetta in input principalmente file.tab in cui ogni colonna è separate da tabulazione e ogni record è su una riga diversa con la prima riga contenente i nomi degli attributi. Accetta inoltre anche file Excel. 
+Il database a me fornito era un file.data, pertanto si è resa necessaria una conversione.
+
+\noindent Dunque ho aperto il file .data in Excel che permette di specificare un carattere come divisore fra le colonne (nel mio caso la virgola), dopo di che ho inserito tre righe in cui ho specificato nel seguente ordine:
+\begin{itemize}
+\item nome attributo,
+\item tipo di attributo (continuo, discreto),
+\item attributo della classe. 
+\end{itemize}
+\noindent In seguito ho letto il file con Orange e ho salvato il tutto come file.tab.
+
+\noindent Da questo momento in ogni schema Orange la widget file contiene il file.tab ottenuto.
+
 \end{document}
