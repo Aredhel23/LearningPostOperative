@@ -4,3 +4,5 @@
 *.tcp
 *.toc
 *.tps
+*.aux
+*.bbl
