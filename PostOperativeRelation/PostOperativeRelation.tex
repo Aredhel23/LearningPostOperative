@@ -144,4 +144,32 @@ Il database a me fornito era un file.data, pertanto si è resa necessaria una co
 
 \noindent Da questo momento in ogni schema Orange la widget file contiene il file.tab ottenuto.
 
+\section{Visualizzazione dei dati e Feature Selection}
+
+\subsection{Osservazioni sul database}
+
+La maggioranza degli attributi sono discreti con 3 opzioni, tranne L-O2 che presenta 4 opzioni e Comfort che è numerico.
+
+\noindent Il database ha classi fortemente sproporzionate, infatti I ha solo due istanze , S 24 e A 64, quindi il classificatore di maggioranza avrà una buona accuratezza.
+
+\noindent Per analizzare meglio i dati ho creato un  file Orange in cui a partire dal mio db ho visualizzato la distribuzione.
+
+La widget distribuzione mi permette di visualizzare, per un attributo alla volta, la frequenza di ogni classe per ogni valore dell'attributo. 
+
+\noindent Dal momento che, come già scritto, la classe I ha solo due istanze si può facilmente ipotizzare che almeno un valore di un attributo permetterà di escludere la terapia intensiva. Inoltre è bene notare anche che l'attributo SURF-STBL ha esattamente le stesse frequenze delle classi per entrambi i valori e quindi non può dare informazioni per discriminare le classi in quanto l'entropia è massima. Al contrario il valore basso di L-BP mi permette di dire con certezza che il paziente è destinato a un piano.
+\subsection{Prima Feature Selection}
+Prima di decidere se eliminare degli attributi, controllo la regola del pollice. La regola del pollice consiste nel controllare che il numero dei dati analizzati sia almeno 10 volte il numero degli attributi, se non è rispettata il campione è considerato troppo ristretto per avere una buona accuratezza di generalizzazione. Nel nostro caso ci sono 8 attributi e 90 istanze, quindi la regola è rispettata.
+Tuttavia non tutti gli attributi sono utili, infatti SURF-STB non dà alcuna informazione come possiamo confermare con la widget 'rank' come si vede nella figura \ref{fig:1}, pertanto non sarà tenuta in considerazione fin dall'inizio.
+Un'altra scelta sarà eliminare le istanze della classe I. Per quanto questa classe dovrebbe essere forse la più importante, in quanto ci permette di mandare in terapia intensiva pazienti particolarmente gravi, due sole istanze non possono avere alcun valore al fine statistico. 
+Dunque utilizzo la select rows con le condizioni della figura \ref{fig:2} per non prendere in considerazione la classe I e la select columns per non considerare l'attributo SURF-STB.
+\begin{figure}	
+	\centering
+	\includegraphics[scale = 0.5]{img/rank.JPG}
+	\caption{informazione di ogni attributo }\label{fig:1}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale = 0.5]{img/rows.JPG}
+	\caption{selezione dei record non di classe I}	\label{fig:2}
+\end{figure}	
 \end{document}
