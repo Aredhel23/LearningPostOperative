@@ -1,6 +1,3 @@
-
-<<<<<<< Updated upstream
-=======
 %% Based on a TeXnicCenter-Template by Gyorgy SZEIDL.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -66,5 +63,65 @@
 \end{titlepage}
 
 \tableofcontents
+\chapter{Introduzione}
+L'obbiettivo di questo progetto è sviluppare un modello predittivo a partire da un database reale al fine di prevedere all'interno dell'iter ospedaliero dove deve essere collocato un paziente dopo un'operazione. 
+
+\noindent Analizzando dei valori indicatori generici della salute, quali la temperatura e la pressione corporea, di un paziente dopo un qualsiasi intervento, è possibile applicare tecniche di data mining e ricavare così una regola decisionale per scegliere se un paziente debba essere spostato in terapia intensiva, in un piano appropriato della struttura o dimesso.
+
+\noindent Per costruire i classificatori e quindi la regola decisionale è stato analizzato il database "Postoperative Patient Data" creato da Sharon Summers, School of Nursing, University of Kansas Medical Center, Kansas City, KS 66160, Linda Woolery, School of Nursing, University of Missour nel giugno del 1993 e donato  da Jerzy W. Grzymala-Busse. 
+
+Il database si presenta come un file.data, con un esempio per riga e con gli attributi  separati da una virgola. E' presente inoltre un file .name con un elenco degli usi passati e con una breve descrizione di ogni attributo.
+
+\section{Composizione del dataset}
+Il dataset è composto da 90 istanze e 9 attributi, incluso quello della classe, sono presenti alcuni dati mancanti.
+Descrivo ora il significato dei vari attributi:
+\begin{itemize}
+
+	\item L-CORE (temperatura interna del paziente espressa in gradi Celsius):
+	
+              alta (> 37), media (>= 36 e <= 37), bassa (< 36)
+	\item L-SURF (temperatura superficiale del paziente espressa in gradi Celsius):
+	
+              alta (> 36.5), media (>= 36.5 e <= 35), bassa (< 35)
+	\item L-O2 (saturazione ossigeno in \%):
+	
+              eccellente (>= 98), buona (>= 90 e < 98), discreta (>= 80 e < 90), scarsa (< 80)
+	\item L-BP (ultima misurazione della pressione del sangue):
+	
+              alta (> 130/90), media (<= 130/90 e >= 90/70), bassa (< 90/70)
+	\item SURF-STBL (stabilità della temperatura superficiale del paziente):
+	
+              stabile, moderatamente stabile, instabile
+	\item CORE-STBL (stabilità della temperatura interna del paziente)
+	
+              stabile, moderatamente stabile, instabile
+	\item  BP-STBL (stabilità della pressione sanguigna del paziente)
+	
+             stabile, moderatamente stabile, instabile
+	\item COMFORT (sensazione del benessere del paziente al momento dell'uscita, misurata come un numero intero tra 0 e 20)
+	\item Attributo della classe: decisione ADM-DECS (decisione di disimpegno dalla sala operatoria):
+	
+              I : paziente inviato alla terapia intensiva,
+							
+              S : paziente pronto per andare a casa,
+							
+              A: paziente inviato a un generico piano dell'ospedale.
+														
+\end{itemize}
+Le classi sono così distribuite:
+\begin{itemize}
+\item I: 2 istanze,
+\item S: 24 istanze,
+\item A: 64 istanze.
+\end{itemize}
+L'attributo comfort presenta tre dati mancanti
+\section{Uso passato del database}
+\begin{itemize}
+\item  A. Budihardjo, J. Grzymala-Busse, L. Woolery (1991). 
+
+Program LERS LB $2.5$ as a tool for knowledge acquisition in nursing, Proceedings of the 4th Int. Conference on Industrial \& Engineering Applications of AI \& Expert Systems, pp. $735-740.$
+\item L. Woolery, J. Grzymala-Busse, S. Summers, A. Budihardjo (1991). 
+
+The use of machine learning program LERS LB 2.5 in knowledge acquisition for expert system development in nursing. Computers in Nursing 9, pp. 227-234.			
+\end{itemize}
 \end{document}
->>>>>>> Stashed changes
