@@ -144,7 +144,7 @@ Il database a me fornito era un file.data, pertanto si è resa necessaria una co
 
 \noindent Da questo momento in ogni schema Orange la widget file contiene il file.tab ottenuto.
 
-\section{Visualizzazione dei dati e Feature Selection}
+\section{Visualizzazione e Preparazione dei dati}
 
 \subsection{Osservazioni sul database}
 
@@ -172,4 +172,14 @@ Dunque utilizzo la select rows con le condizioni della figura \ref{fig:2} per no
 	\includegraphics[scale = 0.5]{img/rows.JPG}
 	\caption{selezione dei record non di classe I}	\label{fig:2}
 \end{figure}	
+\section{Trattamento dati mancanti}
+Nel Db sono presenti solo 3 dati mancanti nell'attributo comfort. Dato che sono pochi, ho più dati di quelli richiesti dalla regola del pollice e poiché l'attributo ha molta informazione, preferisco eliminare le istanze, in modo da non influenzare la classificazione con dei valori medi non necessariamente corretti.
+Pertanto utilizzo in Orange la widget \emph{'impute'} e seleziono \emph{'rimuovi istanze con valori sconosciuti'}.
+\begin{figure}	
+	\centering
+	\includegraphics[scale = 0.4]{img/imputing.JPG}
+	\caption{imputing dei dati mancanti }\label{fig:3}
+\end{figure}
+\section{Discretizzazione}
+Prima di procedere, noto dai box-plot che l'attributo COMFORT è un numero tra 0 e 20 ma che si concentra intorno al 10, inoltre vedendo la distribuzione molto precisa, si vedono due picchi in 10 e 15 e guardando la tabella dei dati vedo come in realtà siano utilizzati solo quattro valori: 5, 7, 10 e15 . Decido di discretizzare COMFORT in tre valori: basso, medio, altro con soglie poste a 8.5 e 12.5.
 \end{document}
