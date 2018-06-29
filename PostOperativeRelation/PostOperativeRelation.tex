@@ -182,4 +182,16 @@ Pertanto utilizzo in Orange la widget \emph{'impute'} e seleziono \emph{'rimuovi
 \end{figure}
 \section{Discretizzazione}
 Prima di procedere, noto dai box-plot che l'attributo COMFORT è un numero tra 0 e 20 ma che si concentra intorno al 10, inoltre vedendo la distribuzione molto precisa, si vedono due picchi in 10 e 15 e guardando la tabella dei dati vedo come in realtà siano utilizzati solo quattro valori: 5, 7, 10 e15 . Decido di discretizzare COMFORT in tre valori: basso, medio, altro con soglie poste a 8.5 e 12.5.
+\section{Correlazione}
+Infine cerco eventuali correlazioni per ridurre ulteriormente gli attributi, infatti se due o più attributi sono fortemente correlati non è necessario disporre di entrambi per arrivare alla medesima conclusione. Inoltre l'indipendenza fra gli attributi è un assunzione di alcuni modelli tra cui il Naive Bayes che confronteremo. Ciò che mi aspetto è una correlazione tra la temperatura interna ed esterna. Utilizzo la widget scatter-plot per avere una visualizzazione grafica delle relazioni fra gli attributi due a due. A un primo sguardo non c'è nessuna correlazione fra gli attributi, neanche quella che mi aspettavo. La conferma dell'assenza di correlazioni è dato anche dalla widget 'Sieve Diagrams'.  
+\begin{figure}	
+	\centering
+	\includegraphics[scale = 0.4]{img/ScatterJPG.JPG}
+	\caption{Scatter plot che non evidenzia correlazioni tra temperatura esterna e interna }\label{fig:4}
+\end{figure}
+\begin{figure}	
+	\centering
+	\includegraphics[scale = 0.4]{img/Sieve.JPG}
+	\caption{Diagramma di Sieve che non evidenzia correlazioni tra temperatura esterna e interna }\label{fig:5}
+\end{figure}
 \end{document}
