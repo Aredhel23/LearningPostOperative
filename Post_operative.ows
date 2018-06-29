@@ -9,8 +9,10 @@
 		<node id="5" name="Select Columns" position="(299.0, 269.0)" project_name="Orange3" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" title="Select Columns" version="" />
 		<node id="6" name="Impute" position="(393.0, 270.0)" project_name="Orange3" qualified_name="Orange.widgets.data.owimpute.OWImpute" title="Impute" version="" />
 		<node id="7" name="Data Table" position="(486.0, 270.0)" project_name="Orange3" qualified_name="Orange.widgets.data.owtable.OWDataTable" title="Data Table (1)" version="" />
-		<node id="8" name="Box Plot" position="(563.0, 218.0)" project_name="Orange3" qualified_name="Orange.widgets.visualize.owboxplot.OWBoxPlot" title="Box Plot" version="" />
-		<node id="9" name="Discretize" position="(580.0, 331.0)" project_name="Orange3" qualified_name="Orange.widgets.data.owdiscretize.OWDiscretize" title="Discretize" version="" />
+		<node id="8" name="Box Plot" position="(589.0, 172.0)" project_name="Orange3" qualified_name="Orange.widgets.visualize.owboxplot.OWBoxPlot" title="Box Plot" version="" />
+		<node id="9" name="Discretize" position="(578.0, 334.0)" project_name="Orange3" qualified_name="Orange.widgets.data.owdiscretize.OWDiscretize" title="Discretize" version="" />
+		<node id="10" name="Scatter Plot" position="(663.0, 437.0)" project_name="Orange3" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" title="Scatter Plot" version="" />
+		<node id="11" name="Sieve Diagram" position="(619.0, 482.0)" project_name="Orange3" qualified_name="Orange.widgets.visualize.owsieve.OWSieveDiagram" title="Sieve Diagram" version="" />
 	</nodes>
 	<links>
 		<link enabled="true" id="0" sink_channel="Data" sink_node_id="1" source_channel="Data" source_node_id="0" />
@@ -22,6 +24,8 @@
 		<link enabled="true" id="6" sink_channel="Data" sink_node_id="7" source_channel="Data" source_node_id="6" />
 		<link enabled="true" id="7" sink_channel="Data" sink_node_id="8" source_channel="Data" source_node_id="7" />
 		<link enabled="true" id="8" sink_channel="Data" sink_node_id="9" source_channel="Selected Data" source_node_id="7" />
+		<link enabled="true" id="9" sink_channel="Data" sink_node_id="10" source_channel="Data" source_node_id="9" />
+		<link enabled="true" id="10" sink_channel="Data" sink_node_id="11" source_channel="Data" source_node_id="9" />
 	</links>
 	<annotations />
 	<thumbnail />
@@ -92,7 +96,7 @@ AABtZXRhc3FBfXFCdWJhdS4=
 </properties>
 		<properties format="pickle" node_id="2">gAN9cQAoWBIAAABjb250cm9sQXJlYVZpc2libGVxAYhYCQAAAGRpc2NfY29udHECiVgNAAAAcmVs
 YXRpdmVfZnJlcXEDiVgTAAAAc2F2ZWRXaWRnZXRHZW9tZXRyeXEEQzIB2dDLAAIAAP////j////4
-AAAFXQAAAt8AAAAAAAAAFwAABVUAAALXAAAAAAAAAAAFVnEFWA8AAABzbW9vdGhpbmdfaW5kZXhx
+AAAFXQAAAt8AAAFhAAAAfAAAA+wAAAJNAAAAAAIAAAAFVnEFWA8AAABzbW9vdGhpbmdfaW5kZXhx
 BksKWAsAAABfX3ZlcnNpb25fX3EHSwFYEAAAAGNvbnRleHRfc2V0dGluZ3NxCF1xCShjT3Jhbmdl
 LndpZGdldHMuc2V0dGluZ3MKQ29udGV4dApxCimBcQt9cQwoWAQAAAB0aW1lcQ1HQdbMfEEq4bFY
 BgAAAHZhbHVlc3EOfXEPKFgMAAAAZ3JvdXB2YXJfaWR4cRBLCEr+////hnERWAkAAABzaG93X3By
@@ -210,6 +214,33 @@ dGl6ZQpFcXVhbEZyZXEKcRZLA4VxF4FxGIVxGYFxGk5Oh3EbgXEcc0r+////hnEdaAdLAXVYCgAA
 AGF0dHJpYnV0ZXNxHn1xHyhYBgAAAEwtQ09SRXEgSwFYBgAAAEwtU1VSRnEhSwFYBAAAAEwtTzJx
 IksBWAQAAABMLUJQcSNLAVgJAAAAQ09SRS1TVEJMcSRLAVgHAAAAQlAtU1RCTHElSwFoEksCWAgA
 AABBRE0tREVDU3EmSwF1WAUAAABtZXRhc3EnfXEodWJhdS4=
+</properties>
+		<properties format="pickle" node_id="10">gAN9cQAoWAsAAABhdXRvX3NhbXBsZXEBiFgTAAAAYXV0b19zZW5kX3NlbGVjdGlvbnECiFgSAAAA
+Y29udHJvbEFyZWFWaXNpYmxlcQOIWBMAAABzYXZlZFdpZGdldEdlb21ldHJ5cQRDMgHZ0MsAAgAA
+AAABBQAAAAkAAAS2AAACygAAAQ0AAAAoAAAErgAAAsIAAAAAAAAAAAVWcQVYDwAAAHNlbGVjdGlv
+bl9ncm91cHEGTlgRAAAAdG9vbGJhcl9zZWxlY3Rpb25xB0sAWAUAAABncmFwaHEIfXEJKFgLAAAA
+YWxwaGFfdmFsdWVxCksAWA0AAABjbGFzc19kZW5zaXR5cQuJWBEAAABqaXR0ZXJfY29udGludW91
+c3EMiVgLAAAAaml0dGVyX3NpemVxDUsKWBMAAABsYWJlbF9vbmx5X3NlbGVjdGVkcQ6JWAsAAABw
+b2ludF93aWR0aHEPSwdYCQAAAHNob3dfZ3JpZHEQiFgLAAAAc2hvd19sZWdlbmRxEYhYDQAAAHNo
+b3dfcmVnX2xpbmVxEolYEQAAAHRvb2x0aXBfc2hvd3NfYWxscROJdVgLAAAAX192ZXJzaW9uX19x
+FEsCWBAAAABjb250ZXh0X3NldHRpbmdzcRVdcRZjT3JhbmdlLndpZGdldHMuc2V0dGluZ3MKQ29u
+dGV4dApxFymBcRh9cRkoWAQAAAB0aW1lcRpHQdbMgpFfa5pYBgAAAHZhbHVlc3EbfXEcKFgGAAAA
+YXR0cl94cR1YBgAAAEwtQ09SRXEeS2WGcR9YBgAAAGF0dHJfeXEgWAYAAABMLVNVUkZxIUtlhnEi
+aAh9cSMoWAoAAABhdHRyX2NvbG9ycSRYCAAAAEFETS1ERUNTcSVLZYZxJlgKAAAAYXR0cl9sYWJl
+bHEnTkr+////hnEoWAoAAABhdHRyX3NoYXBlcSlOSv7///+GcSpYCQAAAGF0dHJfc2l6ZXErTkr+
+////hnEsdWgUSwJ1WAoAAABhdHRyaWJ1dGVzcS19cS4oaB5LAWghSwFYBAAAAEwtTzJxL0sBWAQA
+AABMLUJQcTBLAVgJAAAAQ09SRS1TVEJMcTFLAVgHAAAAQlAtU1RCTHEySwFYBwAAAENPTUZPUlRx
+M0sBaCVLAXVYBQAAAG1ldGFzcTR9cTV1YmF1Lg==
+</properties>
+		<properties format="pickle" node_id="11">gAN9cQAoWBIAAABjb250cm9sQXJlYVZpc2libGVxAYhYEwAAAHNhdmVkV2lkZ2V0R2VvbWV0cnlx
+AkMyAdnQywACAAAAAAE0AAAANQAAAwUAAAJbAAABPAAAAFQAAAL9AAACUwAAAAAAAAAABVZxA1gL
+AAAAX192ZXJzaW9uX19xBEsBWBAAAABjb250ZXh0X3NldHRpbmdzcQVdcQZjT3JhbmdlLndpZGdl
+dHMuc2V0dGluZ3MKQ29udGV4dApxBymBcQh9cQkoWAQAAAB0aW1lcQpHQdbMg39GCS5YBgAAAHZh
+bHVlc3ELfXEMKFgGAAAAYXR0cl94cQ1YBgAAAEwtQ09SRXEOS2WGcQ9YBgAAAGF0dHJfeXEQWAYA
+AABMLVNVUkZxEUtlhnESWAkAAABzZWxlY3Rpb25xE2NidWlsdGlucwpzZXQKcRRdcRWFcRZScRdK
+/v///4ZxGGgESwF1WAoAAABhdHRyaWJ1dGVzcRl9cRooaA5LAWgRSwFYBAAAAEwtTzJxG0sBWAQA
+AABMLUJQcRxLAVgJAAAAQ09SRS1TVEJMcR1LAVgHAAAAQlAtU1RCTHEeSwFYBwAAAENPTUZPUlRx
+H0sBWAgAAABBRE0tREVDU3EgSwF1WAUAAABtZXRhc3EhfXEidWJhdS4=
 </properties>
 	</node_properties>
 </scheme>
