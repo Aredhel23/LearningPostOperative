@@ -201,10 +201,10 @@ Andremo ad analizzare i seguenti classificatori:
 	\item Albero decisionale,
 	\item Naive Bayes,
 	\item Logistic regression,
-	 \item K-Nearest-Neighbours,
-		\item Support Vector Machine,
-			\item CN2 rule induction.
-	\end{itemize}		
+	\item K-Nearest-Neighbours,
+	\item Support Vector Machine,
+	\item CN2 rule induction.
+\end{itemize}		
 	Prima di ispezionare i classificatori, però, dividiamo i dati per effettuare il training e i test. Divido i dati con la widget 'Data Sampler' con sampling type proporzione fissa al 30\% stratificato. 
 	
 	Dunque i dati generati verranno utilizzati per fare i test finali per mantenere l'indipendenza, mentre divido ulteriormente le istanze rimanenti (70\%) con sampling type 'cross validation' con 5 fold e opzioni dati stratificati e replicabili. Dunque farò il training 5 volte usando ogni volta a rotazione 4 fold per i training e 1 per i test e analizzerò gli indici di accuratezza e AUC per fare i confronti.
