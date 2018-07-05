@@ -212,9 +212,25 @@ Andremo ad analizzare i seguenti classificatori:
 	\section{I Classificatori}
 		\subsection{L' Albero Decisionale}
 		L'albero decisionale è anche detto classificatore universale, è un modello ad alta varianza adatto quando si hanno attributi discreti e tanti dati. Il suo punto forte è la capacità di classificare dati con superfici di separazione non lineari. Avendo alta varianza, perché funzioni bene è necessario utilizzare tecniche di pruning per evitare una perfetta accuratezza di ricostituzione, ma una scarsa accuratezza di generalizzazione. Quindi impostiamo alcuni parametri di forward pruning come si può vedere in figura \ref{fig:6}.
-		\begin{figure}	
+\begin{figure}	
 	\centering
 	\includegraphics[scale = 0.8]{img/Tree.JPG}
 	\caption{Parametri del modello 'Albero Decisionale' utilizzato }\label{fig:6}
 \end{figure}
+	\subsection{Naive Bayes}
+	Il classificatore Naive Bayes è un semplice modello probabilistico, basato sulla forte assunzione di indipendenza degli attributi. Dunque il suo modello è: 
+	\begin{equation}
+	P(C|X) = \frac{P(C)*P(X|C)}{P(X)}
+	\end{equation}
+	\begin{itemize}
+		\item P(C) = probabilità della classe,
+		\item P(X) = probabilità degli attributi
+	\end{itemize}
+	Essendoci l'assunzione di indipendenza possiamo scrivere:
+	\begin{equation}
+	C = argmax (P(C)*\prod_{}{}{P(X|C)})
+	\end{equation}
+	Nel nostro database gli attributi sembrano effettivamente indipendenti e grazie alla feature selection abbiamo solo i più informativi, anche se nessuno in particolare sembra in grado di discriminare bene le classi.
+	\subsection{Logistic Regression}
+	
 \end{document}
