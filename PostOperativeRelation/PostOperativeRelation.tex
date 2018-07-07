@@ -202,7 +202,6 @@ Andremo ad analizzare i seguenti classificatori:
 	\item Naive Bayes,
 	\item Logistic regression,
 	\item K-Nearest-Neighbours,
-	\item Support Vector Machine,
 	\item CN2 rule induction.
 \end{itemize}		
 	Prima di ispezionare i classificatori, però, dividiamo i dati per effettuare il training e i test. Divido i dati con la widget 'Data Sampler' con sampling type proporzione fissa al 30\% stratificato. 
@@ -243,10 +242,6 @@ Dato un nuovo caso, dunque, il classificatore non fa altro che guardare a quale 
 	\caption{Parametri del modello 'K-Nearest-Neighbours' utilizzato }\label{fig:7}
 \end{figure}	
 
-	\subsection{Support Vector Machines}
-E' un classificatore lineare generalizzato grazie all'utilizzo di funzioni kernel, è molto potente e si propone di separare linearmente i casi di classi binarie. Prese due classi, nel caso lineare, vengono creati due support vector paralleli coincidenti con il caso di training più vicino al confine, poi si crea il confine come retta parallela ai due support vector a metà tra i due. Per gestire casi rumorosi si utilizza un parametro $\xi$ di tolleranza per rendere più labili i confini. In teoria andrebbe utilizzato con attributi continui, in quanto si fonda sulle distanze, ma è possibile usarlo anche con attributi categorici utilizzando apposite dummy variables.
-
-Con alcuni adattamenti è possibile utilizzare il classificatore anche con più classi.
-Nel nostro caso abbiamo solo due classi e attributi categorici.
+	
 
 \end{document}
