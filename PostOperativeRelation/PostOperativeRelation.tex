@@ -232,6 +232,8 @@ Andremo ad analizzare i seguenti classificatori:
 	\end{equation}
 	Nel nostro database gli attributi sembrano effettivamente indipendenti e grazie alla feature selection abbiamo solo i più informativi, anche se nessuno in particolare sembra in grado di discriminare bene le classi.
 	\subsection{Logistic Regression}
+	La regressione logistica è un modello discriminativo, cioè che stima direttamente la probabilità a posteriori della classe, dati gli attributi. E' in grado di modellizzare le relazione fra gli attributi sia continui, sia categorici, sia binari e una classe binaria come nel nostro caso (è tuttavia possibile estenderla a casi con più classi). L'utilizzo della funzione logistica e della logit permette di avere una semplice trasformazione di P( C|x ) e una relazione lineare con gli attributi. Per decidere la classe viene utilizzata la stima a massima verosomiglianza.
+
 	\subsection{K-Nearest-Neighbours}
 	Il K-Nearest-Neighbours è il classificatore più semplice in termini di implementazione e logica, è un classificatore pigro, che bada solo a una funzione di distanza per scegliere. Funziona bene con attributi discreti.
 Dato un nuovo caso, dunque, il classificatore non fa altro che guardare a quale classe sono assegnati i k esempi più vicini e assegna la classe di maggioranza al nuovo caso. Più k è grande più si evita il rumore, ma si rende più labile la classificazione, di solito si sceglie k>=3. Dunque i parametri del classificatore sono un numero intero k e una funzione di distanza; ho scelto di utilizzare k = 5 e la distanza euclidea come mostrato in figura \ref{fig:7}.
