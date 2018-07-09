@@ -1,0 +1,158 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+
+
+</head><body>
+
+ 
+
+<div id="2801826981640" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test &amp; Score <span class="timestamp">Mon Jul 09 18, 14:47:01</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> Average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Method</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">AUC</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CA</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">F1</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Precision</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Recall</th></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Logistic Regression</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.694</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.692</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.566</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.479</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.692</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Naive Bayes</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.639</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.769</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.716</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.827</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.769</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Tree</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.583</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.769</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.716</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.827</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.769</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CN2 rule inducer</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.583</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.769</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.716</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.827</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.769</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">kNN</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.556</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.692</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.566</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.479</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.692</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Constant</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.500</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.692</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.566</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.479</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.692</td></tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="2801826983656" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test &amp; Score <span class="timestamp">Mon Jul 09 18, 14:47:17</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> Average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Method</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">AUC</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CA</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">F1</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Precision</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Recall</th></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CN2 rule inducer</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.653</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.538</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.538</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.538</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.538</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Naive Bayes</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.583</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.615</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.625</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.642</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.615</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">kNN</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.514</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.615</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.625</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.642</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.615</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Constant</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.500</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.692</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.566</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.479</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.692</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Logistic Regression</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.472</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.538</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.538</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.538</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.538</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Tree</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.431</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.462</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.437</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.415</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.462</td></tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="2801827072472" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test &amp; Score <span class="timestamp">Mon Jul 09 18, 14:47:57</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> Average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Method</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">AUC</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CA</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">F1</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Precision</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Recall</th></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Naive Bayes</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.815</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.732</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.725</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Logistic Regression</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.815</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.643</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.562</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">kNN</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.741</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.667</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.688</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.743</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.667</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CN2 rule inducer</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.685</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.732</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.725</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Tree</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.593</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.732</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.725</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Constant</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.500</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.643</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.562</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.750</td></tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="2801827160568" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test &amp; Score <span class="timestamp">Mon Jul 09 18, 14:48:19</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> Average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Method</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">AUC</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CA</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">F1</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Precision</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Recall</th></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Naive Bayes</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.938</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.612</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.529</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Constant</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.500</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.612</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.529</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Logistic Regression</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.500</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.612</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.529</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Tree</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.312</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.612</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.529</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">kNN</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.312</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.273</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.312</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.364</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.273</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CN2 rule inducer</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.188</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.612</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.529</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td></tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="2801827162584" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test &amp; Score <span class="timestamp">Mon Jul 09 18, 14:48:33</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> Average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Method</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">AUC</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CA</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">F1</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Precision</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Recall</th></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CN2 rule inducer</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.625</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.636</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.566</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.509</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.636</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Constant</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.500</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.612</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.529</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.727</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Tree</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.500</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.636</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.566</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.509</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.636</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Naive Bayes</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.500</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.636</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.566</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.509</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.636</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Logistic Regression</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.500</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.636</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.566</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.509</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.636</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">kNN</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.479</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.545</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.563</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.588</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.545</td></tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="2801809519816" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test &amp; Score <span class="timestamp">Mon Jul 09 18, 15:55:42</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> Average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Method</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">AUC</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CA</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">F1</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Precision</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Recall</th></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Naive Bayes</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.594</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.769</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.698</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.825</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.769</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Logistic Regression</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.549</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.731</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.617</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.534</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.731</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CN2 rule inducer</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.586</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.731</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.617</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.534</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">0.731</td></tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Final test</textarea></div></div></body></html>
