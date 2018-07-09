@@ -241,7 +241,89 @@ Dato un nuovo caso, dunque, il classificatore non fa altro che guardare a quale 
 	\includegraphics[scale = 0.8]{img/Knn.JPG}
 	\caption{Parametri del modello 'K-Nearest-Neighbours' utilizzato }\label{fig:7}
 \end{figure}	
-
+\subsection{CN2 Rule Induction}
+E' un algoritmo di covering diretto che, dunque, estrae regole dai dati. Per trovare una nuova regola viene effettuata una ricerca a fascio dove si continua a tener conto di varie possibili regole candidate chiamate complessi, l'insieme di queste si chiama stella.
+Viene utilizzata una statistica di verosomiglianza per valutare la significatività di ogni complesso e quindi decidere quale regola decisionale scegliere. Nel nostro caso con attributi categorici può essere una buona soluzione.
 	
+\section{Confronto finale tra classificatori e scelta del migliore}
+Ora che abbiamo visto in breve le caratteristiche di ogni classificatore testato, passiamo a guardare i risultati ottenuti. 
+Con il 70\% dei dati presi in modo stratificato, ho utilizzato la widget rank per utilizzare solo gli attributi più informativi e poi ancora la widget data sampler con 5-fold-cross-validation utilizzando 4 fold come training e uno come test set e con la widget 'test and score ' ho salvato i report dei cinque test. 
+Per valutare le performance di ogni classificatore andremo a valutare alcuni indici quali:
+\begin{itemize}
+\item l'Accuratezza: percentuale dei casi classificati correttamente,
+\item l'AUC: l'area sotto la curva di ROC che grafica le performance del classificatore al variare della soglia decisionale, 
+\item la Precision:  percentuale di istanze effettivamente positive tra quelle classificate come tali,
+\item la Recall: rappresenta la percentuale di casi positivi classificati come tali,
+\item indice F: media armonica tra recall e precision.
+\end{itemize}
+Con Matlab ho calcolato le medie delle accuratezze e grazie alla t di student gli intervalli di confidenza di ogni classificatore che riporto in tabella \ref{tab:1}.
+\begin{table}
+\caption{Tabella con accuratezze medie.}
+\label{tab:1}
+\begin{tabular}{|l|c|c|c|l|}
+\hline
+Classificatore & Accuratezza media & CI inf  & CI sup\\
+\hline
+KNN & 0.5278 & 0,3165 & 0,7391\\
+\hline
+Regressione Logistica & 0.6686 & 0,5645 & 0,7738\\
+\hline
+Albero Decisionale & 0.6688 & 0,5119 & 0,8257\\
+\hline
+CN2 & 0.6840 & 0,5645 & 0,8035\\
+\hline
+Naive Bayes & 0.6994 & 0,6131 & 0,7857\\
+\hline
+Maggioranza & 0.7176 & 0,6863 & 0,7489\\
+\hline
+
+\end{tabular}
+\end{table}
+Come si può vedere, in media, il classificatore di maggioranza resta il migliore. E' un risultato che mi aspettavo, dal momento che il dataset è molto rumoroso e sbilanciato. 
+Subito dopo trovo il classificatore Naive Bayes e il CN2, i loro intervalli di confidenza sono più larghi e sono simili a quelli della regressione logistica che tuttavia ha un'accuratezza più bassa.
+
+ Il KNN è il peggiore, mi aspettavo che non andasse molto bene, perché è un classificatore basato sulle distanze e quindi opera meglio con attributi continui rispetto ai discreti a più valori.
+
+Tuttavia oltre all'accuratezza, analizzo anche l'AUC, infatti il classificatore di maggioranza, sceglie sempre la classe più frequente, nel nostro caso la A, a noi invece interessa un classificatore che sia in grado di stabilire anche la S. 
+
+L'AUC del classificatore di maggioranza è 0.5 per definizione, cioè è come se il modello andasse a caso, la sua scelta dipende dalla soglia ottima della curva di ROC, scegliendo la sensitività a 1. Quindi analizzo il comportamento degli altri classificatori.
+
+Tutti i classificatori tranne l'albero decisionale hanno un AUC maggiore di 0.5, l'ottimale sarebbe che fosse vicino a 1. In questo caso il classificatore migliore si rivela essere il Naive Bayes, seguito dalla regressione logistica.
+
+Per decidere allora il miglior classificatore, utilizzo un'altra widget 'test and score' con come test set il 30\% del primo data sampler in modo da assicurarmi l'indipendenza dai training set utilizzato prima, come training set i dati ridotti e come classificatori da valutare il Naive Bayes, la regressione logistica e il CN2.
+Riporto in figura \ref{fig:6} i risultati . 
+Infin, dunque ho scelto come classificatore il Naive Bayes, in quanto sia in accuratezza, in AUC e in Precision ha risultati lievemente migliori.
+
+\begin{table}
+\caption{Tabella con AUC medie.}
+\label{tab:2}
+\begin{tabular}{|l|c|c|c|l|}
+\hline
+Classificatore & AUC media\\
+\hline
+Albero Decisionale & 0.4838\\
+\hline
+Maggioranza & 0.500\\
+\hline
+KNN & 0.5204\\
+\hline
+CN2 & 0.5468\\
+\hline
+Regressione Logistica & 0.5962 \\
+\hline
+Naive Bayes & 0.6950 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{figure}	
+	\centering
+	\includegraphics[scale = 0.4]{img/score.JPG}
+	\caption{Risultati test sul test set indipendente }\label{fig:6}
+\end{figure}
+\begin{figure}	
+	\centering
+	\includegraphics[scale = 0.6]{img/ROC.JPG}
+	\caption{Curva di ROC dei tre classificatori migliori}\label{fig:7}
+\end{figure}
 
 \end{document}
