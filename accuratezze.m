@@ -3,12 +3,12 @@ close all
 clear all
 
 % accuratezze trovate con la 5-fold cross validation
-acc_albero = [0.692 0.692 0.750 0.727 0.727];
+acc_albero = [0.769 0.462 0.750 0.727 0.636];
 acc_constant = [0.692 0.692 0.750 0.727 0.727];
-acc_log = [0.692 0.692 0.750 0.727 0.727];
-acc_naive = [0.769 0.692 0.833 0.727 0.727];
-acc_knn = [0.692 0.462 0.750 0.727 0.727];
-acc_cn2 = [0.692 0.769 0.750 0.818 0.727];
+acc_log = [0.692 0.538 0.750 0.727 0.636];
+acc_naive = [0.769 0.615 0.750 0.727 0.636];
+acc_knn = [0.692 0.462 0.667 0.273 0.545];
+acc_cn2 = [0.769 0.538 0.750 0.727 0.636];
 
 % accuratezze medie
 mean_acc_albero = mean(acc_albero);
@@ -30,12 +30,12 @@ CI_knn = InterConf(acc_knn);
 CI_cn2 = InterConf(acc_cn2);
 
 %auc 
-AUC_albero = [0.472 0.375 0.241 0.271 0.375]; 
+AUC_albero = [0.583 0.431 0.593 0.312 0.500]; 
 AUC_constant = [0.5 0.5 0.5 0.5 0.5];
-AUC_log = [0.500 0.667 0.444 0.333 0.625];
-AUC_naive = [0.597 0.583 0.500 0.521 0.500];
-AUC_knn = [0.500 0.431 	0.389 0.417 0.292];
-AUC_cn2 = [0.486 0.514 0.444 0.542 0.208];
+AUC_log = [0.694 0.472 0.815 0.500 0.500];
+AUC_naive = [0.639 0.583 0.815 0.938 0.500];
+AUC_knn = [0.556 0.514 	0.741 0.312 0.479];
+AUC_cn2 = [0.583 0.653 0.685 0.188 0.625];
 
 %AUC medie
 mean_AUC_albero = mean(AUC_albero);
