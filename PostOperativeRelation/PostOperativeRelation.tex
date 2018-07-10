@@ -68,14 +68,14 @@
 \chapter{Introduzione}
 L'obbiettivo di questo progetto è confrontare dei modelli predittivi su un database reale al fine di scegliere il migliore per prevedere, con una buona accuratezza, all'interno dell'iter ospedaliero dove deve essere collocato un paziente dopo un'operazione. 
 
-\noindent Analizzando dei valori indicatori generici della salute, quali, ad esempio, la temperatura e la pressione corporea, di un paziente dopo un qualsiasi intervento, è possibile applicare tecniche di data mining e ricavare così una regola decisionale per scegliere se un paziente debba essere spostato in terapia intensiva, in un piano appropriato della struttura o dimesso.
+Analizzando dei valori indicatori generici della salute, quali, ad esempio, la temperatura e la pressione corporea, di un paziente dopo un qualsiasi intervento, è possibile applicare tecniche di data mining e ricavare così una regola decisionale per scegliere se un paziente debba essere spostato in terapia intensiva, in un piano appropriato della struttura o dimesso.
 
-\noindent Per costruire i classificatori e quindi la regola decisionale è stato analizzato il database "Postoperative Patient Data" creato da Sharon Summers, School of Nursing, University of Kansas Medical Center, Kansas City, KS 66160, Linda Woolery, School of Nursing, University of Missour nel giugno del 1993 e donato  da Jerzy W. Grzymala-Busse. 
+Il database analizzato è "Postoperative Patient Data" creato da Sharon Summers, School of Nursing, University of Kansas Medical Center, Kansas City, KS 66160, Linda Woolery, School of Nursing, University of Missour nel giugno del 1993 e donato  da Jerzy W. Grzymala-Busse. 
 
 Il database si presenta come un file.data, con un esempio per riga e con gli attributi  separati da una virgola. E' presente inoltre un file .name con un elenco degli usi passati e con una breve descrizione di ogni attributo.
 
 \section{Composizione del dataset}
-Il dataset è composto da 90 istanze e 9 attributi, incluso quello della classe, sono presenti alcuni dati mancanti.
+Il dataset è composto da 90 istanze e 9 attributi, incluso quello della classe. Sono presenti alcuni dati mancanti.
 
 Descrivo ora il significato dei vari attributi:
 \begin{itemize}
@@ -119,7 +119,7 @@ Le classi sono così distribuite:
 \item S: 24 istanze,
 \item A: 64 istanze.
 \end{itemize}
-L'attributo comfort presenta tre dati mancanti
+L'attributo comfort presenta tre dati mancanti.
 \section{Uso passato del database}
 \begin{itemize}
 \item  A. Budihardjo, J. Grzymala-Busse, L. Woolery (1991). 
@@ -164,12 +164,12 @@ Il database ha classi fortemente sproporzionate, infatti I ha solo due istanze ,
 
 Dal momento che, come già scritto, la classe I ha solo due istanze si può facilmente ipotizzare che almeno un valore di un attributo permetterà di escludere la terapia intensiva. Inoltre è bene notare anche che l'attributo SURF-STBL ha esattamente le stesse frequenze delle classi per entrambi i valori e quindi non può dare informazioni per discriminare le classi in quanto l'entropia è massima. Al contrario il valore basso di L-BP mi permette di dire con certezza che il paziente è destinato a un piano.
 \subsection{Prima Feature Selection}
-Prima di decidere se eliminare degli attributi, controllo la regola del pollice. La regola del pollice consiste nel controllare che il numero dei dati analizzati sia almeno 10 volte il numero degli attributi, se non è rispettata il campione è considerato troppo ristretto per avere una buona accuratezza di generalizzazione. Nel nostro caso ci sono 8 attributi e 90 istanze, quindi la regola è rispettata.
+Prima di decidere se eliminare degli attributi, controllo la regola del pollice. La regola del pollice consiste nel calcolare che il numero dei dati analizzati sia almeno 10 volte il numero degli attributi, se non è rispettata il campione è considerato troppo ristretto per avere una buona accuratezza di generalizzazione. Nel nostro caso ci sono 8 attributi e 90 istanze, quindi la regola è rispettata.
 
-Tuttavia non tutti gli attributi sono utili, infatti SURF-STB non dà alcuna informazione come possiamo confermare con la widget 'rank' di cui vediamo i risultati nella figura \ref{fig:1}, pertanto non sarà tenuta in considerazione fin dall'inizio.
+Tuttavia non tutti gli attributi sono utili, infatti SURF-STBL non dà alcuna informazione come possiamo confermare con la widget 'rank' di cui vediamo i risultati nella figura \ref{fig:1}, pertanto non sarà tenuta in considerazione fin dall'inizio.
 Un'altra scelta sarà eliminare le istanze della classe I. Per quanto questa classe dovrebbe essere forse la più importante, in quanto ci permette di mandare in terapia intensiva pazienti particolarmente gravi, due sole istanze non possono avere alcun valore al fine statistico. 
 
-Dunque utilizzo la select rows con le condizioni della figura \ref{fig:2} per non prendere in considerazione la classe I e la select columns per non considerare l'attributo SURF-STB.
+Dunque utilizzo la 'select rows' con le condizioni della figura \ref{fig:2} per non prendere in considerazione la classe I e la 'select columns' per non considerare l'attributo SURF-STBL.
 \begin{figure}	
 	\centering
 	\includegraphics[scale = 0.5]{img/rank.JPG}
@@ -195,7 +195,7 @@ Prima di procedere, noto dai box-plot che l'attributo COMFORT è un numero tra 0
 \section{Correlazione}
 Infine cerco eventuali correlazioni per ridurre ulteriormente gli attributi, infatti se due o più attributi sono fortemente correlati non è necessario disporre di entrambi per arrivare alla medesima conclusione. Inoltre l'indipendenza fra gli attributi è un assunzione di alcuni modelli tra cui il Naive Bayes che confronteremo. Ciò che mi aspetto è una correlazione tra la temperatura interna ed esterna. Utilizzo la widget scatter-plot per avere una visualizzazione grafica delle relazioni fra gli attributi due a due. A un primo sguardo non c'è nessuna correlazione fra gli attributi, neanche quella che mi aspettavo. La conferma dell'assenza di correlazioni è data anche dalla widget 'Sieve Diagrams'.  
 
-Infatti, un 'Sieve Diagrams' è un metodo grafico per visualizzare le frequenze in una tabella di contingenza a due vie in relazione alle frequenze aspettate s indipendenza e sottolinea possibili pattern fra due attributi. Dunque l’area di ogni rettangolo è proporzionale alla frequenza attesa,  mentre la frequenza osservata si vede dal numero di quadrati in ogni rettangolo. L'intensità del colore evidenzia una deviazione dell'indipendenza, in rosso positiva, in blu negativa. Nel nostro caso i colori sono appena accennati, quindi gli attributi possono essere considerati indipendenti.
+Infatti, un 'Sieve Diagrams' è un metodo grafico per visualizzare le frequenze in una tabella di contingenza a due vie in relazione alle frequenze aspettate sotto l'assunzione di indipendenza e sottolinea possibili pattern fra due attributi. Dunque l’area di ogni rettangolo è proporzionale alla frequenza attesa,  mentre la frequenza osservata si vede dal numero di quadrati in ogni rettangolo. L'intensità del colore evidenzia una deviazione dall'indipendenza, in rosso positiva, in blu negativa. Nel nostro caso i colori sono appena accennati, quindi gli attributi possono essere considerati indipendenti.
 \begin{figure}	
 	\centering
 	\includegraphics[scale = 0.5]{img/ScatterJPG.JPG}
@@ -245,7 +245,7 @@ Andremo ad analizzare i seguenti classificatori:
 	\end{equation}
 	Nel nostro database gli attributi sembrano effettivamente indipendenti e grazie alla feature selection abbiamo solo i più informativi, quindi il Naive Bayes potrebbe essere un buon classificatore per il nostro database.
 	\subsection{Logistic Regression}
-	La regressione logistica è un modello discriminativo, cioè che stima direttamente la probabilità a posteriori della classe, dati gli attributi. E' in grado di modellizzare le relazione fra gli attributi sia continui, sia categorici, sia binari e una classe binaria come nel nostro caso (è tuttavia possibile estenderla a casi con più classi). L'utilizzo della funzione logistica e della logit permette di avere una semplice trasformazione di P( C|x ) e una relazione lineare con gli attributi. Per decidere la classe viene utilizzata la stima a massima verosomiglianza.
+	La regressione logistica è un modello discriminativo, cioè che stima direttamente la probabilità a posteriori della classe, dati gli attributi. E' in grado di modellizzare le relazioni fra gli attributi sia continui, sia categorici, sia binari e una classe binaria come nel nostro caso (è tuttavia possibile estenderla a casi con più classi). L'utilizzo della funzione logistica e della logit permette di avere una semplice trasformazione di P(C|X) e una relazione lineare con gli attributi. Per decidere la classe viene utilizzata la stima a massima verosomiglianza.
 
 	\subsection{K-Nearest-Neighbours}
 	Il K-Nearest-Neighbours è il classificatore più semplice in termini di implementazione e logica, è un classificatore \emph{pigro}, che bada solo a una funzione di distanza per scegliere. Funziona bene con attributi continui. 
@@ -253,7 +253,7 @@ Andremo ad analizzare i seguenti classificatori:
 	Nel caso di attributi categorici, come nel nostro database, si considera una distanza pari a 0 in caso di valori uguali e un numero (solitamente 1) in caso di valori diversi. Dal momento che i nostri attributi sono categorici e spesso a più valori, è probabile che questo classificatore non sia il più performante, tuttavia verrà confrontato.
 	
 	
-Il KNN non fa altro che guardare a quale classe sono assegnati i k esempi più vicini al nuovo caso e lo assegna la classe di maggioranza. 
+Il KNN non fa altro che guardare a quale classe sono assegnati i k esempi più vicini al nuovo caso e lo assegna alla classe di maggioranza. 
 
 Più k è grande più si evita il rumore, ma si rende più labile la classificazione, di solito si sceglie k>=3. 
 
@@ -326,15 +326,15 @@ L'AUC del classificatore di maggioranza è 0.5 per definizione, cioè è come se
 
 \noindent Quindi analizzo il comportamento degli altri classificatori.
 
-Tutti i classificatori tranne l'albero decisionale hanno un AUC maggiore di 0.5, l'ottimale sarebbe che fosse vicino a 1. 
+Tutti i classificatori tranne l'albero decisionale hanno un' AUC maggiore di 0.5, l'ottimale sarebbe che fosse vicino a 1. 
 
 In questo caso il classificatore migliore si rivela essere il Naive Bayes, seguito dalla regressione logistica.
 
-Per decidere allora il miglior classificatore, utilizzo un'altra widget 'test and score' con come test set il 30\% del primo data sampler in modo da assicurarmi l'indipendenza dai training set utilizzato prima, come training set i dati ridotti e come classificatori da valutare il Naive Bayes, la regressione logistica e il CN2.
+Per decidere allora il miglior classificatore, utilizzo un'altra widget 'test and score' con come test set il 30\% del primo data sampler in modo da assicurarmi l'indipendenza dal training set utilizzato prima, come training set i dati ridotti e come classificatori da valutare il Naive Bayes, la regressione logistica e il CN2.
 
 Riporto in figura \ref{fig:8} i risultati . 
 
-Infine, dunque ho scelto come classificatore il Naive Bayes, in quanto sia in accuratezza, in AUC e in Precision ha risultati lievemente migliori.
+Finalmente ho scelto come classificatore migliore il Naive Bayes, in quanto sia in accuratezza, in AUC e in Precision ha risultati lievemente migliori degli altri. Anche guardando la matrice di confusione è l'unico che riesce ad individuare casi di dimissione e, quindi, ad avere meno falsi positivi.
 
 \begin{table}
 \centering
